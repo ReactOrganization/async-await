@@ -2,24 +2,29 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 class App extends Component {
+
+  thingOne = () => {
+    console.log("Hi")
+  }
+
+  thingTwo = (data) => {
+    console.log(data)
+  }
+
+    thingThree = async (data1, data2, data3) => {
+    console.log(data1 * data2 / data3)
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <p onClick={this.thingOne}>one thing</p>
+        {/* use arrow function to pass argument to a function */}
+        <p onClick={() => this.thingTwo(5)}>two thing</p>
+        <p onClick={() => this.thingThree(2, 59, 99)}>three thing</p>
+        <p onClick={this.doManyThings}> Many things</p>
       </div>
     );
   }
